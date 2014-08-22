@@ -2737,6 +2737,9 @@ static NSString* TERMINAL_ARRANGEMENT_HIDING_TOOLBELT_SHOULD_RESIZE_WINDOW = @"H
         (([[NSApp currentEvent] modifierFlags] & theMask) == NSControlKeyMask);
     BOOL snapWidth = !modifierDown;
     BOOL snapHeight = !modifierDown;
+    // Murphy's Hack
+    snapWidth = false;
+    snapHeight = false;
     if (sender != [self window]) {
       snapWidth = snapHeight = NO;
     }
